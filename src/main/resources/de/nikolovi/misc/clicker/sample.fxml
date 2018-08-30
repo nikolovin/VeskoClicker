@@ -45,7 +45,6 @@
     <Spinner fx:id="fieldHeight" GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.halignment="LEFT" min="10" amountToStepBy="10" max="999999" initialValue="10">
     </Spinner>
 
-    <Button text="СТАРТ" GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.halignment="RIGHT" onAction="#handleStartButtonAction"></Button>
-    <Button text="СТОП" GridPane.rowIndex="6" GridPane.columnIndex="1" GridPane.halignment="LEFT" onAction="#handleStopButtonAction"></Button>
+    <Button text="СТАРТ" GridPane.rowIndex="6" GridPane.columnIndex="1" GridPane.halignment="LEFT" onAction="#handleStartButtonAction"></Button>
 
 </GridPane>
