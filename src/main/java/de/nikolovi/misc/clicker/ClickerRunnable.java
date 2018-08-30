@@ -31,25 +31,31 @@ public class ClickerRunnable implements Runnable {
 
             while (!stopFlag) {
                 robot.mouseMove((int)currentPoint.getX(), (int)currentPoint.getY());
-                robot.delay(100);
+                robot.delay(10);
                 robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-                robot.delay(100);
+                robot.delay(10);
                 robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-                robot.delay(500);
 
                 if (!interrupted(currentPoint)) {
                     currentPoint = getNextTarget(currentPoint);
+                    if (isCycleEnded(currentPoint)) {
+                        robot.delay(1000);
+                    }
                 } else {
                     stopFlag = true;
                 }
             }
         } catch (AWTException e) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Кофти");
+            alert.setTitle("Error");
             alert.setHeaderText("Exception");
             alert.setContentText(e.getMessage());
             alert.showAndWait();
         }
+    }
+
+    private boolean isCycleEnded(Point currentPoint) {
+        return currentPoint.getX() == bounds.getMinX() && currentPoint.getY() == bounds.getMinY();
     }
 
     private boolean interrupted(Point currentPoint) {
