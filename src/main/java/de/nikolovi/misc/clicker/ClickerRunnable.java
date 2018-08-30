@@ -31,9 +31,7 @@ public class ClickerRunnable implements Runnable {
 
             while (!stopFlag) {
                 robot.mouseMove((int)currentPoint.getX(), (int)currentPoint.getY());
-                robot.delay(10);
                 robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-                robot.delay(10);
                 robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 
                 if (!interrupted(currentPoint)) {
