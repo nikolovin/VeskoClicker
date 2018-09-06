@@ -1,5 +1,9 @@
 # VeskoClicker
-Given a rectangle's coordinates it simulates consecutive clicks on every pixel inside.
+
+Records clicking on the screen and replays them.
+
+Using the `jnativehook` library by *kwhat*.
+Please, visit the main github repository: &lt;<https://github.com/kwhat/jnativehook>&gt;
 
 ### Build
 
